@@ -49,20 +49,11 @@ class ViewController: UIViewController {
     @IBAction func changeFilter(_ sender: UIButton) {
         let ac = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet)
         
-//        for name in filterNames {
-//            ac.addAction(UIAlertAction(title: name, style: .default, handler: setFilter))
-//        }
+        // adding filter to the list
+        for name in filterNames {
+            ac.addAction(UIAlertAction(title: name, style: .default, handler: setFilter))
+        }
         
-        ac.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIPixellate", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CISepiaTone", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CITwirlDistortion", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CISharpenLuminance", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIUnsharpMask", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIVignette", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIColorPolynomial", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CIDarkenBlendMode", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "cancel", style: .cancel))
         
         if let popoverController = ac.popoverPresentationController {
