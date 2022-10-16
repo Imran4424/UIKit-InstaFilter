@@ -90,7 +90,9 @@ class ViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         guard let imageContent = imageView.image else {
-            print("Image is nil")
+            let ac = UIAlertController(title: "No Image!!!", message: "Image view has no image", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
             return
         }
         
