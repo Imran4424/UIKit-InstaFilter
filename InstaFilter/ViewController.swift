@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var intensity: UISlider!
+    @IBOutlet weak var changeFilterButton: UIButton!
+    
     var currentImage: UIImage!
     var filterNames = [String]()
     
@@ -34,6 +36,7 @@ class ViewController: UIViewController {
         context = CIContext()
         // CISepiaTone is a core image filter name
         currentFilter = CIFilter(name: filterNames[0])
+        changeFilterButton.setTitle(filterNames[0], for: .normal)
     }
     
     @objc func importPicture() {
@@ -82,6 +85,7 @@ class ViewController: UIViewController {
         }
         
         currentFilter = CIFilter(name: actionTitle)
+        changeFilterButton.setTitle(actionTitle, for: .normal)
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)

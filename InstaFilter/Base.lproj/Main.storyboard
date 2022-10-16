@@ -130,6 +130,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UEN-xn-3LC"/>
                     <connections>
+                        <outlet property="changeFilterButton" destination="mIu-pj-tFz" id="v7G-NQ-eV7"/>
                         <outlet property="imageView" destination="9KH-JL-IsS" id="ORr-sU-ndX"/>
                         <outlet property="intensity" destination="CIC-en-uUN" id="wjC-Wc-fHo"/>
                     </connections>
