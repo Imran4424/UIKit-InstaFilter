@@ -135,8 +135,17 @@ class ViewController: UIViewController {
         imageView.image = processedImage
     }
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError: Error?, contextInfo: UnsafeRawPointer) {
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        let ac: UIAlertController!
         
+        if let  error = error {
+            ac = UIAlertController(title: "Save Error", message: error.localizedDescription, preferredStyle: .alert)
+        } else {
+            ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+        }
+        
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }
 
