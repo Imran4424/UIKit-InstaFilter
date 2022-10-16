@@ -45,6 +45,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CIC-en-uUN">
                                                 <rect key="frame" x="92" y="2" width="274" height="32"/>
+                                                <connections>
+                                                    <action selector="intensityChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yFO-Ng-MMU"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +74,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Change Filter">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1wb-6K-7rM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e7-Z0-xzw">
                                                 <rect key="frame" x="314" y="3" width="60" height="44"/>
@@ -81,6 +87,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MtI-Uq-bel"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,6 +129,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UEN-xn-3LC"/>
+                    <connections>
+                        <outlet property="imageView" destination="9KH-JL-IsS" id="ORr-sU-ndX"/>
+                        <outlet property="intensity" destination="CIC-en-uUN" id="wjC-Wc-fHo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
